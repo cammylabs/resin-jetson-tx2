@@ -11,9 +11,9 @@ postProvisioningInstructions = [
 
 module.exports =
 	version: 1
-	slug: 'skx2'
-	aliases: [ 'skx2' ]
-	name: 'Nvidia Jetson TX2 SK'
+	slug: 'cti-orbitty-tx2'
+	aliases: [ 'cti-orbitty-tx2' ]
+	name: 'NVIDIA Jetson TX2 Orbitty'
 	arch: 'aarch64'
 	state: 'experimental'
 
@@ -35,11 +35,11 @@ module.exports =
 	supportsBlink: false
 
 	yocto:
-		machine: 'skx2'
+		machine: 'cti-orbitty-tx2'
 		image: 'resin-image-flasher'
 		fstype: 'resinos-img'
 		version: 'yocto-pyro'
-		deployArtifact: 'resin-image-flasher-skx2.resinos-img'
+		deployArtifact: 'resin-image-flasher-cti-orbitty-tx2.resinos-img'
 		compressed: true
 
 	options: [ networkOptions.group ]

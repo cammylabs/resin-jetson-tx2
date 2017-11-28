@@ -1,7 +1,7 @@
 inherit kernel-resin deploy
 
 FILESEXTRAPATHS_append := ":${THISDIR}/${PN}"
-SRC_URI_append = " file://tegra186-tx2-cti-ASG916.dtb"
+SRC_URI_append = " file://tegra186-tx2-cti-ASG001-USB3.dtb"
 
 RESIN_CONFIGS_append = " compat"
 
@@ -10,7 +10,7 @@ RESIN_CONFIGS[compat] = " \
     "
 RESIN_CONFIGS_remove = "brcmfmac"
 
-RESIN_CONFIGS_append_skx2 = " cdc_acm wdm"
+RESIN_CONFIGS_append_cti-orbitty-tx2 = " cdc_acm wdm"
 
 RESIN_CONFIGS_DEPS[cdc_acm] = "CONFIG_TTY=y"
 RESIN_CONFIGS[cdc_acm] = "CONFIG_USB_ACM=m"
@@ -51,5 +51,5 @@ do_deploy_append() {
     install -m 0600 "${D}/boot/extlinux/extlinux.conf" "${DEPLOYDIR}"
     install -m 0600 "${D}/boot/extlinux/extlinux.conf_flasher" "${DEPLOYDIR}"
 
-    cp ${WORKDIR}/tegra186-tx2-cti-ASG916.dtb "${DEPLOYDIR}"
+    cp ${WORKDIR}/tegra186-tx2-cti-ASG001-USB3.dtb "${DEPLOYDIR}"
 }
